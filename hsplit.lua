@@ -33,15 +33,7 @@ local function handle_it(member, drop)
 end
 
 ashita.events.register('text_in', 'text_in_cb', function (e)
-    --[[ Mode: Outgoing Party Message
-    if (e.mode == 5 or e.mode == 16777221) then
-        if (e.message:contains('[hsplit]')) then
-            e.blocked = true;
-        end
-        return;
-    end
-    --]]
-    -- Mode: Incoming Party Message
+    -- Mode: Outgoing/Incoming Party Message
     if (e.mode == 5 or e.mode == 13 or e.mode == 16777221 or e.mode == 16777229) then
         if (e.message:contains('[hsplit]')) then
             e.blocked = true;
